@@ -16,22 +16,21 @@ class EmployeeController extends Controller
    
     public function index()
     {
-        $emps = $this->empRepo->Paginate();
+        $emps = $this->empRepo->getAll();
         //return $this->empRepo->Paginate();
-        return view('employee', compact('emps'));
+        return view('employee',compact('emps'));
+        //dd($emps);
     }
 
-    
-    public function create()
-    {
+    public function create() {
         return view('create');
     }
-
     
+       
     public function store(Request $request)
     {
         $employees = $this->empRepo->create($request->all());
-        return view('employee');
+        return redirect('employees');
     }
 
     

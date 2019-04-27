@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">Dashboard - Employee
 				<div class="float-right" id="btn-create">
-						<a href="/employees/create" class="btn btn-success">Create</a>
+						<a href="{{ route('employees.create')}}" class="btn btn-success">Create</a>
 					</div>
 				</div>
                 
@@ -23,9 +23,9 @@
 								<th colspan="2">Action</th>
 							</tr>
 						</thead>
-						@foreach($emps as $emp)
-						   
+										   
 						<tbody>
+							@foreach($emps as $emp)
 							<tr>
 
 								<td>{{$emp->first_name}}</td>
@@ -43,11 +43,9 @@
 									</form>
 								</td>
 							</tr>
-
-						</tbody>
-						
 						@endforeach
-					</table>
+						</tbody>
+				   </table>
                 </div>
                 <div class="card-footer">
 				<div class="pull-right" id="page_link">

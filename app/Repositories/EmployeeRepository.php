@@ -15,7 +15,7 @@ class EmployeeRepository implements EmployeeInterface
 
     public function getAll()
     {
-        return $this->employee->all();
+        return $this->employee->paginate();
     }
 
     public function getById($id)
@@ -23,9 +23,9 @@ class EmployeeRepository implements EmployeeInterface
         return $this->findOrFail($id);
     }
 
-    public function paginate($perPage = 10, $columns = array('*')) {
-        return $this->employee->paginate($perPage, $columns);
-    }
+    // public function paginate($perPage = 10, $columns = array('*')) {
+    //     return $this->employee->paginate($perPage, $columns);
+    // }
 
     public function create(array $attributes)
      {
